@@ -1,2 +1,2 @@
 # linux-env
-Linux Enviorment
+Linux Environment
