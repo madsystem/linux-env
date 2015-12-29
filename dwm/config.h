@@ -17,7 +17,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "web" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "utils", "web" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -27,6 +27,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "KeePass2", NULL,       NULL,       1 << 7,       0,           -1 },
 };
 
 /* layout(s) */
