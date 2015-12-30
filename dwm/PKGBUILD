@@ -14,15 +14,27 @@ options=(zipman)
 depends=('libx11' 'libxinerama' 'libxft' 'freetype2' 'st')
 install=dwm.install
 source=(http://dl.suckless.org/dwm/dwm-$pkgver.tar.gz
-	config.h
+    dwm-6.1-systray.diff
+    dwm-6.1-pertag.diff
+    dwm-6.1-better-borders.diff
+    dwm-6.1-my.diff
 	dwm.desktop)
 md5sums=('f0b6b1093b7207f89c2a90b848c008ec'
-         'ea441a3ed42cb07a6da1e5c64e7cba18'
+         '964ab536b175afbd3529aba596c8fa68'
+         '3126263695676ffa7ab7d90e49bd77cb'
+         'c3417a55ddc4d0b9a7e3641ef16484a0'
+         'dee7571e266d3676aa60131b81b9dbc8'
          '939f403a71b6e85261d09fc3412269ee')
 
 prepare() {
   cd $srcdir/$pkgname-$pkgver
-  cp $srcdir/config.h config.h
+
+  patch -p1 -i ../dwm-6.1-systray.diff
+  patch -p1 -i ../dwm-6.1-pertag.diff
+  patch -p1 -i ../dwm-6.1-better-borders.diff
+  cp config.def.h config.h
+
+  patch -p1 -i ../dwm-6.1-my.diff
 }
 
 build() {
