@@ -1,5 +1,5 @@
---- a/config.h	
-+++ a/config.h	
+--- a/config.h	2015-12-30 15:00:38.891847963 +0100
++++ b/config.h	2015-12-31 18:49:09.991434728 +0100
 @@ -11,7 +11,7 @@
  static const char selbordercolor[]  = "#005577";
  static const char selbgcolor[]      = "#005577";
@@ -14,21 +14,33 @@
  
  /* tagging */
 -static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "utils", "web" };
++static const char *tags[] = { "1", "2", "3", "4", "5", "mail", "com", "utils", "web" };
  
  static const Rule rules[] = {
  	/* xprop(1):
-@@ -29,8 +29,8 @@
+@@ -29,8 +29,10 @@
  	 *	WM_NAME(STRING) = title
  	 */
  	/* class      instance    title       tags mask     isfloating   monitor */
 -	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
- 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
-+	{ "KeePass2", NULL,       NULL,       1 << 7,       0,           -1 },
+-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
++	{ "Thunderbird",    NULL,       NULL,       1 << 5,       0,           -1 },
++	{ "Pidgin",         NULL,       NULL,       1 << 6,       0,           -1 },
++	{ "Firefox",        NULL,       NULL,       1 << 8,       0,           -1 },
++	{ "KeePass2",       NULL,       NULL,       1 << 7,       0,           -1 },
  };
  
  /* layout(s) */
-@@ -59,7 +59,7 @@
+@@ -46,7 +48,7 @@
+ };
+ 
+ /* key definitions */
+-#define MODKEY Mod1Mask
++#define MODKEY Mod4Mask
+ #define TAGKEYS(KEY,TAG) \
+ 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
+ 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
+@@ -59,7 +61,7 @@
  /* commands */
  static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
  static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
