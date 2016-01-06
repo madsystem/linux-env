@@ -24,4 +24,4 @@ function ranger-cd {
     }
 
 # aliases
-alias redwm='cd ~/dev/repos/linux-env/dwm; updpkgsums; makepkg -fi --noconfirm;'
+alias redwm='cd $ENV_DIR/linux-env/dwm; updpkgsums; makepkg -fi --noconfirm;'
