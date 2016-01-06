@@ -11,6 +11,8 @@ dropbox &
 sh ~/.fehbg &
 #dwm status bar
 sh $ENV_DIR/linux-env/scripts/dwm-bar.sh 
+#mate monitor settings
+/usr/lib/mate-settings-daemon/mate-settings-daemon &
 
 #finally start dwm
 exec dwm
