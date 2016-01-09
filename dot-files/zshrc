@@ -103,9 +103,6 @@ DEFAULT_USER=madsystem
 #cow says :) (added 18.10.2015)
 [[ "$PS1" ]] && fortune -s | cowsay -f /usr/share/cows/sodomized.cow 
 
-# aliases
-alias redwm='cd $ENV_DIR/linux-env/dwm; updpkgsums; makepkg -fi --noconfirm;'
-
 #autostart mpd (added 01.12.2015)
 # MPD daemon start (if no other user instance exists)
 #[ ! -s ~/.config/mpd/pid ] && mpd
