@@ -25,7 +25,7 @@ md5sums=('f0b6b1093b7207f89c2a90b848c008ec'
          '3126263695676ffa7ab7d90e49bd77cb'
          'c3417a55ddc4d0b9a7e3641ef16484a0'
          'f5aded5492ae95b22a0793414412d37d'
-         '3b03180aa5b768ead7188ea9eca7dd6f'
+         'a7b3b40d152d86db374df384b7f51bb2'
          '939f403a71b6e85261d09fc3412269ee')
 
 prepare() {

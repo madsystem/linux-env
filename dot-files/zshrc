@@ -23,7 +23,7 @@ DISABLE_AUTO_UPDATE="true"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line to disable colors in ls.
-DISABLE_LS_COLORS="true"
+#DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -51,7 +51,7 @@ DISABLE_LS_COLORS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git colored-man-pages)
 
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -109,3 +109,25 @@ alias redwm='cd $ENV_DIR/linux-env/dwm; updpkgsums; makepkg -fi --noconfirm;'
 #autostart mpd (added 01.12.2015)
 # MPD daemon start (if no other user instance exists)
 #[ ! -s ~/.config/mpd/pid ] && mpd
+
+#cd to current ranger directory
+function ranger-cd {
+    tempfile="$(mktemp -t tmp.XXXXXX)"
+    /usr/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+    test -f "$tempfile" &&
+        if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+            cd -- "$(cat "$tempfile")"
+        fi
+        rm -f -- "$tempfile"
+    }
+
+
+#aliases to mounts
+alias repos='cd /mnt/repos/'
+alias data='cd /mnt/data/'
+alias appdata='cd /mnt/appdata'
+alias bigdata='cd /mnt/bigdata'
+
+#aliases to pastebin
+alias pastebin='curl -F c=@- https://ptpb.pw' 
+

@@ -1,5 +1,5 @@
---- a/config.h	2015-12-30 15:00:38.891847963 +0100
-+++ b/config.h	2015-12-31 18:49:09.991434728 +0100
+--- a/config.h	2016-01-23 13:18:01.492359944 +0100
++++ b/config.h	2016-01-30 16:53:10.985272042 +0100
 @@ -11,7 +11,7 @@
  static const char selbordercolor[]  = "#005577";
  static const char selbgcolor[]      = "#005577";
@@ -40,12 +40,22 @@
  #define TAGKEYS(KEY,TAG) \
  	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
  	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-@@ -59,7 +61,7 @@
+@@ -59,7 +61,8 @@
  /* commands */
  static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
  static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 -static const char *termcmd[]  = { "st", NULL };
 +static const char *termcmd[]  = { "terminator", NULL };
++static const char *rangercmd[]  = { "terminator", "-e ranger", NULL };
  
  static Key keys[] = {
  	/* modifier                     key        function        argument */
+@@ -96,6 +99,8 @@
+ 	TAGKEYS(                        XK_8,                      7)
+ 	TAGKEYS(                        XK_9,                      8)
+ 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
++	{ MODKEY,                       XK_e,      spawn,          {.v = rangercmd } },
++
+ };
+ 
+ /* button definitions */
