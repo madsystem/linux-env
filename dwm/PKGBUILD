@@ -10,7 +10,7 @@ pkgdesc="A dynamic window manager for X"
 url="http://dwm.suckless.org"
 arch=('i686' 'x86_64')
 license=('MIT')
-options=(zipman)
+options=(zipman debug !strip)
 depends=('libx11' 'libxinerama' 'libxft' 'freetype2' 'st')
 install=dwm.install
 source=(dwm-$pkgver.tar.gz
@@ -20,7 +20,7 @@ source=(dwm-$pkgver.tar.gz
     dwm-6.1-single-tagset.diff
     dwm-6.1-my.diff
 	dwm.desktop)
-md5sums=('f0b6b1093b7207f89c2a90b848c008ec'
+md5sums=('7619919a081dd6f74f63c5843e26cb29'
          '964ab536b175afbd3529aba596c8fa68'
          '3126263695676ffa7ab7d90e49bd77cb'
          'c3417a55ddc4d0b9a7e3641ef16484a0'

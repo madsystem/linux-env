@@ -123,11 +123,15 @@ function ranger-cd {
 
 
 #aliases to mounts
-alias repos='cd /mnt/repos/'
+alias repos-ext4='cd /mnt/repos-ext4/'
+alias repos-ntfs='cd /mnt/repos-ntfs/'
 alias data='cd /mnt/data/'
 alias appdata='cd /mnt/appdata'
 alias bigdata='cd /mnt/bigdata'
 
 #aliases to pastebin
 alias pastebin='curl -F c=@- https://ptpb.pw' 
+
+#remove dir alias
+alias rd='rm -rd'
 

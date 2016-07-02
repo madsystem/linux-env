@@ -6,7 +6,7 @@ export ENV_DIR=~/env/
 #start xbindkeys
 xbindkeys &
 #start dropbox
-dropbox &
+#dropbox &
 #reset wallpaper
 sh ~/.fehbg &
 #dwm status bar
@@ -14,6 +14,8 @@ sh $ENV_DIR/linux-env/scripts/dwm-bar.sh
 #mate monitor settings
 /usr/lib/mate-settings-daemon/mate-settings-daemon &
 
-#finally start dwm
-exec dwm
+#finally start wm
+#exec dwm
+exec i3
+
 
