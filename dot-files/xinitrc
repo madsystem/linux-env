@@ -6,7 +6,7 @@ export ENV_DIR=~/env/
 #start xbindkeys
 xbindkeys &
 #start dropbox
-#dropbox &
+dropbox &
 #reset wallpaper
 sh ~/.fehbg &
 #dwm status bar
