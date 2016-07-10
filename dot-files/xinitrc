@@ -7,15 +7,15 @@ export ENV_DIR=~/env/
 xbindkeys &
 #start dropbox
 dropbox &
-#reset wallpaper
-sh ~/.fehbg &
 #dwm status bar
-sh $ENV_DIR/linux-env/scripts/dwm-bar.sh 
+#sh $ENV_DIR/linux-env/scripts/dwm-bar.sh fix me -> put to home 
 #mate monitor settings
 /usr/lib/mate-settings-daemon/mate-settings-daemon &
+
+#wallpaper
+feh --bg-scale ~/.config/wallpaper.png &
 
 #finally start wm
 #exec dwm
 exec i3
-
 
