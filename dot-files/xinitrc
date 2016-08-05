@@ -17,5 +17,5 @@ feh --bg-scale ~/.config/wallpaper.png &
 
 #finally start wm
 #exec dwm
-exec i3
+exec i3 
 
