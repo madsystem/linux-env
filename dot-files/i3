@@ -97,7 +97,9 @@ bindsym $mod+Shift+less move workspace to output left
 
 # pin aplications
 assign [class="^Firefox$"] $WS1
-assign [class="^KeePass2$"] $WS8
+assign [class="^Terminator"] $WS2
+assign [class="^Gvim"] $WS3
+assign [class="^Keepassx2$"] $WS8
 assign [class="^Thunderbird$"] $WS9
 assign [class="^Pidgin$"] $WS10
 
@@ -131,6 +133,9 @@ client.urgent           $base02 $base08    $base00 $base0F
 # autostart
 exec_always xrdb ~/.config/rofi_colors 
 exec compton
+#laptop
+#bindsym $mod+p exec rofi -show run -width 100 -padding 450 -lines 3 -fullscreen -opacity "85"
+#pc
 bindsym $mod+p exec rofi -show run -width 100 -padding 450 -lines 3 -fullscreen -opacity "85"
 
 # reload / restart / exit i3 / lock
@@ -173,6 +178,7 @@ bar {
 #program short cuts
 bindsym $mod+e exec "terminator -e ranger"
 bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+e exec caja --no-desktop /home/madsystem
 #bindsym $mod+p exec rofi -show run
 
 
@@ -180,4 +186,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 for_window [class="Lxappearance"] floating enable
 for_window [class="Seahorse"] floating enable
 for_window [class="Pavucontrol"] floating enable
+
+#auto start
+exec firefox
 
